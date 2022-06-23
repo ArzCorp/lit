@@ -8,17 +8,23 @@ import { html, css, LitElement } from 'lit'
 export class ListContainer extends LitElement {
 	static get styles() {
 		return css`
-			:host {
-				display: block;
-				border: solid 1px gray;
-				padding: 16px;
+			ul {
 				max-width: 800px;
+				margin: 0px auto;
+				padding: 10px 20px;
+				background-color: #e5e7eb;
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
 			}
 		`
 	}
 
 	static get properties() {
-		return {}
+		return {
+			data: { type: Array },
+		}
 	}
 
 	constructor() {
@@ -43,9 +49,11 @@ export class ListContainer extends LitElement {
 	render() {
 		console.log(this.data)
 		return html`<section>
-			${this.data.map(
-				(item) => html`<list-element data="${item}"></list-element>`
-			)}
+			<ul>
+				${this.data.map(
+					(item) => html`<list-element name="${item.name}"></list-element>`
+				)}
+			</ul>
 		</section> `
 	}
 }
