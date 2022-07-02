@@ -1,11 +1,11 @@
 import { html, render } from '../node_modules/lit-html/lit-html.js'
 
-const template = () => {
+const template = ({ title }) => {
 	return html`
 		<div class="container">
-			<p>Soy un componente</p>
+			<p>${title}</p>
 		</div>
 	`
 }
 
-render(template(), document.getElementById('app'))
+render(template({ title: 'Soy un template' }), document.getElementById('app'))
