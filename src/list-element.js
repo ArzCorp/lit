@@ -9,7 +9,8 @@ import { html, css, LitElement } from 'lit'
 export class ListElement extends LitElement {
 	static get styles() {
 		return css`
-			:host {
+			li {
+				background-color: white;
 				display: block;
 				border: solid 1px gray;
 				padding: 16px;
@@ -20,7 +21,7 @@ export class ListElement extends LitElement {
 
 	static get properties() {
 		return {
-			data: { type: Object },
+			name: { type: String },
 		}
 	}
 
@@ -29,7 +30,7 @@ export class ListElement extends LitElement {
 	}
 
 	render() {
-		return html`<li>${this.data}</li> `
+		return html`<li>${this.name}</li> `
 	}
 }
 
