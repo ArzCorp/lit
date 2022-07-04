@@ -1,3 +1,6 @@
 import './components/template.js'
 import './components/bindings/text.js'
 import './components/bindings/attribute.js'
+import './components/bindings/property.js'
+import './components/bindings/events.js'
+import './components/bindings/node.js'
