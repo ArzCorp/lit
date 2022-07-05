@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit'
-
+import { Currency } from '../utils/currency'
 class WalletComponent extends LitElement {
 	constructor() {
 		super()
@@ -16,14 +16,19 @@ class WalletComponent extends LitElement {
 
 	render() {
 		return html`
+			<style>
+				h2 {
+					font-weight: 600;
+					color: #1e40af;
+					margin: 2px 0px;
+				}
+			</style>
 			<div>
 				<h2>${this.name}</h2>
-				<p><b>Disponible:</b> ${this.money}</p>
+				<p>Disponible: ${Currency.mxnFormat(this.money)}</p>
 			</div>
 		`
 	}
-
-	firstUpdated() {}
 
 	deposit(amount) {
 		this.money += amount
