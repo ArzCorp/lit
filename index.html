@@ -5,17 +5,14 @@
 		<link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./src/css/index.css" />
-		<title>Vite + Lit App</title>
+		<title>Lit App</title>
 		<script type="module" src="/src/index.js"></script>
 	</head>
 	<body>
-		<div id="app"></div>
-		<div id="bindings-text"></div>
-		<div id="bindings-attribute"></div>
-		<div id="bindings-property"></div>
-		<div id="bindings-events"></div>
-		<div id="bindings-node"></div>
-		<div id="bindings-template"></div>
-		<div id="bindings-map-template"></div>
+		<title-component id="title"></title-component>
+		<wallet-component name="Dinero"></wallet-component>
 	</body>
+	<script>
+		document.querySelector('#title').setAttribute('title', 'Nuevo Banco')
+	</script>
 </html>
