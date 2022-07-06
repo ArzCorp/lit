@@ -9,10 +9,7 @@
 		<script type="module" src="/src/index.js"></script>
 	</head>
 	<body>
-		<title-component id="title"></title-component>
-		<wallet-component name="Dinero"></wallet-component>
+		<get-data url="https://rickandmortyapi.com/api/character"></get-data>
+		<list-component></list-component>
 	</body>
-	<script>
-		document.querySelector('#title').setAttribute('title', 'Nuevo Banco')
-	</script>
 </html>

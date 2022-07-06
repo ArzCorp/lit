@@ -72,7 +72,7 @@ class WalletComponent extends LitElement {
 	}
 
 	Withdrawal(amount) {
-		if (this.money > amount) {
+		if (this.money >= amount) {
 			this.money -= amount
 		} else {
 			this.setMessage('Saldo insuficiente')
