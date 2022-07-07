@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit'
+import { html, css, LitElement } from 'lit'
 
 class ListComponent extends LitElement {
 	constructor() {
@@ -18,6 +18,17 @@ class ListComponent extends LitElement {
 			currentItems: { type: Array },
 		}
 	}
+
+	static styles = css`
+		.list {
+			padding: 20px 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 50px 80px;
+		}
+	`
 
 	get itemsLength() {
 		return this.currentItems.length
@@ -43,13 +54,14 @@ class ListComponent extends LitElement {
 						findBy: 'name',
 					})}
 			/>
-			<div>
+			<div class="list">
 				${this.currentItems.map(
-					(item) => html`<div>
-						<p>${item.name}</p>
-						<img src=${item.image} alt=${`foto de ${item.name}`} />
-						<p>${item.status}</p>
-					</div>`
+					(item) =>
+						html`<character-component
+							name=${item.name}
+							image=${item.image}
+							status=${item.status}
+						></character-component>`
 				)}
 			</div>
 		`
