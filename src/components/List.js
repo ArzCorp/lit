@@ -43,17 +43,14 @@ class ListComponent extends LitElement {
 	}
 
 	render() {
-		if (this.itemsLength <= 0) return html`<p>Cargando...</p>`
 		return html`
-			<input
-				type="text"
-				placeholder=${`(${this.itemsLength}) Buscar por nombre`}
-				@keyup=${(e) =>
+			<search-bar
+				.handleSearch=${(e) =>
 					this.searchItem({
 						text: e.target.value,
 						findBy: 'name',
 					})}
-			/>
+			/></search-bar>
 			<div class="list">
 				${this.currentItems.map(
 					(item) =>
