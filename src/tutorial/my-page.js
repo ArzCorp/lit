@@ -1,22 +1,20 @@
 import { LitElement, html } from 'lit'
 
+import './my-component.js'
 class MyPage extends LitElement {
 	constructor() {
 		super()
-		this.text = 'Hello World'
+		this.value = 'Titulo aqui'
 	}
 
 	static properties = {
-		text: { type: String },
+		value: { type: String },
 	}
 
 	render() {
-		console.log('Render MyPage')
-		return html`
-			<p>${this.text}</p>
-			<p>${this.name}</p>
-			<p>${this.lastName}</p>
-		`
+		return html`<div>
+			<my-component myValue=${null}></my-component>
+		</div> `
 	}
 }
 
