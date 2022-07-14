@@ -13,7 +13,7 @@ class MyPage extends LitElement {
 
 	render() {
 		return html`<div>
-			<my-component myValue=${null}></my-component>
+			<my-component></my-component>
 		</div> `
 	}
 }

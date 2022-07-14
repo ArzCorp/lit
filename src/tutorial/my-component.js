@@ -3,15 +3,15 @@ import { html, LitElement } from 'lit'
 class MyComponent extends LitElement {
 	constructor() {
 		super()
+		this._text = 'Este es un componente'
 	}
 
 	static properties = {
-		myValue: { type: Boolean },
+		_text: { state: true },
 	}
 
 	render() {
-		console.log('Render MyComponent:', this.myValue)
-		return html`<p></p> `
+		return html`<p>${this._text}</p> `
 	}
 }
 
